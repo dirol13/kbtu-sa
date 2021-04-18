@@ -4,22 +4,20 @@ kind: Deployment
 metadata:
   namespace: task1
   labels:
-    app: crmw
-    io.kompose.service: task1
-  name: task1
+    io.kompose.service: front
+  name: front
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: crmw
+      io.kompose.service: front
   template:
     metadata:
       labels:
-        app: crmw
-        io.kompose.service: task1
+        io.kompose.service: front
     spec:
       containers:
-        - name: task1
+        - name: front
           image: dirol13/kbtu-sa:v1
           env:
             - name: LOG_LEVEL
@@ -38,23 +36,23 @@ spec:
           #          subPath: ca.jks
           #          name: certs
           #          readOnly: true
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            failureThreshold: 3
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            initialDelaySeconds: 9
-            periodSeconds: 10
-            failureThreshold: 3
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 8000
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 10
+          #   failureThreshold: 3
+          # readinessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 8000
+          #   initialDelaySeconds: 9
+          #   periodSeconds: 10
+          #   failureThreshold: 3
       terminationGracePeriodSeconds: 30
-      imagePullSecrets:
-        - name: docker-test
+      # imagePullSecrets:
+      #   - name: docker-test
       restartPolicy: Always
   strategy:
     type: RollingUpdate
@@ -66,17 +64,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    io.kompose.service: task1
-  name: task1-service
+    io.kompose.service: front
+  name: front-service
   namespace: task1
 spec:
   ports:
-    - name: "8000"
-      port: 8000
-      targetPort: 8000
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
   selector:
-    io.kompose.service: task1
+    io.kompose.service: front
   type: ClusterIP
 status:
   loadBalancer: {}
-
