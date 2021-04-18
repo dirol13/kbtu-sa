@@ -8,3 +8,4 @@ to build task1 you need:
 5. do "docker run -p 8000:8000" with image
 6. you can test it with another terminal doing curl "curl localhost:8000/health"
 7. it should return {"status": "OK"}
+![image](https://user-images.githubusercontent.com/45285322/115136035-d3fe3180-a03e-11eb-846d-9686a9ebf912.png)
