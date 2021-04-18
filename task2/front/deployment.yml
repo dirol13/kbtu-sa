@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: task1
+  namespace: task2
   labels:
     io.kompose.service: front
   name: front
@@ -66,7 +66,7 @@ metadata:
   labels:
     io.kompose.service: front
   name: front-service
-  namespace: task1
+  namespace: task2
 spec:
   ports:
     - name: "8080"

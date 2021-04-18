@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: task1-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /health
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /health
   namespace: task1
 spec:
   rules:
