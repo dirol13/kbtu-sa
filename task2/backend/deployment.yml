@@ -5,7 +5,7 @@ metadata:
   namespace: task2
   labels:
     io.kompose.service: task2
-  name: task2
+  name: backend
 spec:
   replicas: 2
   selector:
@@ -17,7 +17,7 @@ spec:
         io.kompose.service: task2
     spec:
       containers:
-        - name: task2
+        - name: backend
           image: dirol13/kbtu-sa:v1
           env:
             - name: LOG_LEVEL
@@ -63,7 +63,7 @@ kind: Service
 metadata:
   labels:
     io.kompose.service: task2
-  name: task2-service
+  name: backend-service
   namespace: task2
 spec:
   ports:

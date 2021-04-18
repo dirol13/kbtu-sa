@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: front
-          image: dirol13/kbtu-sa:v1
+          image: dirol13/kbtu-sa:task2-front
           env:
             - name: LOG_LEVEL
               value: info

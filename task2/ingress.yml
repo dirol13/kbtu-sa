@@ -10,17 +10,17 @@ spec:
     - host: sa.homework
       http:
         paths:
-          - path: /healthpath
+          - path: /back
             pathType: Prefix
             backend:
               service:
-                name: task1-service
+                name: backend-service
                 port:
                   number: 8000
-          - path: /kbtu/dmitriy_khen/statusok
+          - path: /front
             pathType: Prefix
             backend:
               service:
-                name: task1-service
+                name: front-service
                 port:
-                  number: 8000
+                  number: 8080
