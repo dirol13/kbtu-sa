@@ -4,18 +4,15 @@ kind: Deployment
 metadata:
   namespace: task1
   labels:
-    app: crmw
     io.kompose.service: task1
   name: task1
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: crmw
   template:
     metadata:
       labels:
-        app: crmw
         io.kompose.service: task1
     spec:
       containers:
@@ -79,4 +76,3 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
-
