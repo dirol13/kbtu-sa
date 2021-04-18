@@ -10,6 +10,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
+      io.kompose.service: task1
   template:
     metadata:
       labels:
