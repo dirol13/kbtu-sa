@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: task1-ingress
   #  annotations:
-          #    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  #    nginx.ingress.kubernetes.io/rewrite-target: /$1
   namespace: task1
 spec:
   rules:
@@ -13,7 +13,14 @@ spec:
           - path: /health
             pathType: Prefix
             backend:
-              service: 
+              service:
+                name: task1-service
+                port:
+                  number: 8000
+          - path: /kbtu/dmitriy_khen/hello
+            pathType: Prefix
+            backend:
+              service:
                 name: task1-service
                 port:
                   number: 8000
