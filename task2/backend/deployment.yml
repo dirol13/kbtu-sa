@@ -51,8 +51,6 @@ spec:
             periodSeconds: 10
             failureThreshold: 3
       terminationGracePeriodSeconds: 30
-      imagePullSecrets:
-        - name: docker-test
       restartPolicy: Always
   strategy:
     type: RollingUpdate
