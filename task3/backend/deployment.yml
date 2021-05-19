@@ -18,7 +18,7 @@ spec:
         tier: backend
     spec:
       containers:
-        - image: dirol13/kbtu-sa-task3:v2
+        - image: dirol13/kbtu-sa-task3:v4
           imagePullPolicy: "IfNotPresent"
           name: product-be
           ports:
