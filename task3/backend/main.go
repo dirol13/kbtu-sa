@@ -14,9 +14,9 @@ import (
 const (
  dbhost     = "sa.homework"
  dbport     = 30185
- dbuser     = "demopostgresadmin"
- dbpassword = "demopostgrespwd"
- dbname     = "demopostgresdb"
+ dbuser     = "admin"
+ dbpassword = "admin"
+ dbname     = "db"
 )
 
 var (
