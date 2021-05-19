@@ -18,20 +18,9 @@ spec:
         tier: backend
     spec:
       containers:
-      - env:
-        - name: DATABASE_HOST
-          value: postgres
-        - name: DATABASE_NAME
-          value: product
-        - name: DATABASE_PASSWORD
-          value: pr0dr0b0t
-        - name: DATABASE_USER
-          value: product_robot
-        - name: DATABASE_PORT
-          value: "5432"
-        image: chrischinchilla/humanitech-product-be
-        imagePullPolicy: "IfNotPresent"
-        name: product-be
-        ports:
-        - containerPort: 8080
+        - image: dirol13/kbtu-sa-task3:v2
+          imagePullPolicy: "IfNotPresent"
+          name: product-be
+          ports:
+            - containerPort: 8080
       restartPolicy: Always
