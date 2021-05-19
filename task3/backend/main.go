@@ -25,7 +25,7 @@ var (
 )
 
 func main() {
- pgdbInfo := fmt.Sprintf("host=sa.homework port=5432 user=admin password=admin dbname=demopostgresdb sslmode=disable")
+ pgdbInfo := fmt.Sprintf("host=sa.homework port=%d user=%s password=%s dbname=%s sslmode=disable", dbport, dbuser, dbpassword, dbname)
  db, err := sql.Open("postgres", pgdbInfo)
  if err != nil {
   panic(err)
