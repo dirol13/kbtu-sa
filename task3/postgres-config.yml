@@ -4,7 +4,8 @@ metadata:
   name: postgres-config-demo
   labels:
     app: postgres
-data:
-  POSTGRES_DB: demopostgresdb
-  POSTGRES_USER: demopostgresadmin
-  POSTGRES_PASSWORD: demopostgrespwd
+data: 
+  DATABASE_HOST: sa.homework
+  DATABASE_NAME: demopostgresdb
+  DATABASE_USER: demopostgresadmin
+  DATABASE_PORT: "5432"
