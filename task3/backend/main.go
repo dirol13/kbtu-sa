@@ -13,7 +13,7 @@ import (
 
 const (
  dbhost     = "sa.homework"
- dbport     = 5432
+ dbport     = 30185
  dbuser     = "demopostgresadmin"
  dbpassword = "demopostgrespwd"
  dbname     = "demopostgresdb"
